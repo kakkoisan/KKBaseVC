@@ -53,6 +53,7 @@
     [UIView animateWithDuration:[self transitionDuration:transitionContext] delay:0.0f options:UIViewAnimationOptionCurveLinear animations:^{
         fromVC.view.frame = fromRect;
         toVC.view.frame = toRect;
+        toVC.view.alpha = 1;
     } completion:^(BOOL finished) {
         [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
     }];

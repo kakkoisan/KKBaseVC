@@ -24,7 +24,7 @@
 }
 
 - (void)dissmissVC{
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self toBack];
 }
 
 @end

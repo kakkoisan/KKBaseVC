@@ -32,6 +32,13 @@
         self.view.backgroundColor = [UIColor whiteColor];
         self.canEdgePan = YES;
         self.kkAnimationType = KKAnimationTypePushRight;
+        
+        //        阴影
+        CALayer *layer = [self.view layer];
+        layer.shadowOffset = CGSizeMake(-5, 0);
+        layer.shadowColor = [[UIColor blackColor] CGColor];
+        layer.shadowRadius = 5.0f;
+        layer.shadowOpacity = 0.2;
     }
     return self;
 }
@@ -62,6 +69,10 @@
     [parentVC.childViewControllers arrayByAddingObject:self];
     [parentVC.percentTransition panToDismiss:self withAnimationType:self.kkAnimationType];
     [parentVC presentViewController:self animated:YES completion:nil];
+}
+
+- (void)toBack{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - //////////UIViewControllerTransitioningDelegate//////////
